@@ -1,0 +1,21 @@
+import {inject} from 'aurelia-framework';
+import {HttpClient} from 'aurelia-fetch-client';
+
+@inject(HttpClient)
+export class Restclient {
+http;
+    constructor(http) {
+        http.configure(config => {
+            config
+                .withBaseUrl('https://express-webserver-mjcoder.c9users.io:8080/api/')
+                .withDefaults({
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+        });
+
+        this.http = http;
+    }
+
+}

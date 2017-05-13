@@ -1,0 +1,14 @@
+<template>
+    <nav>
+      <ul>
+         <li repeat.for = "row of router.navigation">
+            <a href.bind = "row.href">${row.title}</a>
+         </li>
+            <!-- We can call the logout() method directly from the AuthService. -->
+
+         <li><a href="#" click.delegate="auth.logout()">Log Out</a></li>
+      </ul> 
+    </nav>
+    <router-view></router-view>
+ 
+</template>
